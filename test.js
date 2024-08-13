@@ -1,5 +1,3 @@
-const colors = ["red", "yellow", "blue"];
-colors.forEach((item, index) => {
-
-  console.log("asdf" + `${index}, ${item}`)
-})
+let i = 10;
+i = i + 1;
+console.log(i);
