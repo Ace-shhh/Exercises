@@ -1,4 +1,13 @@
-let test = [1, 2, 3, 4];
-const add = 1;
-test.push(add);
-console.log(test);
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var removeDuplicates = function(nums) {
+    nums.forEach((i, idxi) => {
+        nums.forEach((k, idxk) => {
+            if(idxi != idxk && i === k && k != undefined){
+                nums.splice(k, 1)
+            }
+        })
+    })
+};
