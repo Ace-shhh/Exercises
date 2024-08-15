@@ -23,6 +23,6 @@ const input = [
     return bombs;
   };
 
-  bombCounter();
   
-  console.log(bombs);
+  
+  console.log(bombCounter());
