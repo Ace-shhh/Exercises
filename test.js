@@ -1,18 +1,23 @@
-const x = 10;
+const words = ["bella", "label"];
+const obj= {}
+let match = [];
+    function commonChars(){
+        words.forEach((word, wordIdx)=>{
+            let split = word.split("");
+            obj[word] = split;
+            
+            words.forEach((secondWord)=>{
+                if (word != secondWord){
 
-function isPalindrome(){
-    //create a string version of x
-    const xAsString = x.toString();
-    //start i at 0
-    let i = 0;
-    //check if x is === to reversed x
-    for(j = xAsString.length -1 ;  j >= 0 ; j--){
-        if(xAsString.charAt(j) === xAsString.charAt(i)){
-         i++   
-        }else{
-            return false;
-        }
+                    obj[word].foreach((char)=>{
+                        if (char === secondWord){
+                            match.push(char)
+                        }
+                    })
+                }
+            })
+        })
+        
+       return match;
     }
-    return true;
-}
-isPalindrome()
+commonChars();
