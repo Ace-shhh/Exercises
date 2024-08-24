@@ -5,33 +5,41 @@
 
 var commonChars = function(words) {
     const splittedWords = [];
-    let match = [];
-    const result = [];
-    //break down the words to characters
+    const match = [];
+    let toDelete = [];
+    //split the words into characters array and store in splittedWords array
     words.forEach((word)=>{
-        splittedWords.push(word.split(""))
-    });
-    //get the matching characters of arr 0 and 1
-    splittedWords[0].forEach((firstChar, fIdx)=>{
-        splittedWords[1].forEach((secondChar, sIdx)=>{
-            if (firstChar === secondChar){
-                match.push(firstChar);
-                splittedWords[1].splice(sIdx, 1);
-            }
-        })
+        split = word.split("");
+        splittedWords.push(split);
     })
-    //compare the matched result to the rest of the values
-
+    if(splittedWords.length >= 2){
+    //compare first and second splitted words array
+    splittedWords[0].forEach((char)=>{
+        const result = splittedWords[1].indexOf(char);
+        if(result !== -1){
+            match.push(char)
+            splittedWords[1].splice(result, 1)
+        }
+    })
+    //compare matched result to the rest of the values
     for (i = 2; i < splittedWords.length; i++){
-        splittedWords[i].forEach((char)=>{
-            match.forEach((matchChar, mIdx)=>{
-                if(matchChar === char){
-                    result.push(char);
-                    match.splice(mIdx, 1);
-                }
-            })
+        match.forEach((char)=>{
+            const result = splittedWords[i].indexOf(char);
+            if (result !== -1){
+                splittedWords[i].splice(result, 1);
+            }else if(result === -1){
+                toDelete.push(char);
+            }   
+            
         })
-        match = result;
+        toDelete.forEach((char)=>{
+            const del = match.indexOf(char);
+            match.splice(del, 1)
+            toDelete = []
+        })
     }
     return match;
+    }else{
+        return splittedWords[0];
+    }
 };
