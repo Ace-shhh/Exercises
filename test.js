@@ -1,14 +1,21 @@
-function computers () {
-    let laptop = {
-        cpu : 'i9',
-        ram : 16,
-        brand: 'HP',
+const binary = 1011001;
 
-        greet : function(){
-            console.log(this.cpu)
-        }
-    }
-    return laptop
+function convertToDecimal(binary){
+    const arr = binary.toString().split("").reverse();
+    let dec = 1;
+    const decimals = []
+    arr.forEach((num)=>{
+        if(num == 1){
+            decimals.push(dec);
+        };
+        dec = dec * 2;
+    })
+    let answer = 0;
+    decimals.forEach((num)=>{
+        answer = answer + num;
+    })
+    
+    return answer;
 }
 
-computers().greet()
+convertToDecimal(binary)
