@@ -1,18 +1,19 @@
-const binary = 1011001;
+const arr = [6,6,6,6]
+let obj = {};
+let limit = arr.length / 2;
 
-function convertToDecimal(binary){
-    const arr = binary.toString().split("").reverse();
-    let dec = 1;
-    let answer = 0;
+const candyTypes = arr.filter((type)=>{
+    if(obj[type] !== true){
+        obj[type] = true;
+        return true;
+    }else{
+        return false;
+    }
+})
+console.log(Object.values(obj).length)
+// if(limit < candyTypes.length){
+//     console.log(limit);
+// }else{
+//     console.log(candyTypes.length);
+// }
 
-    arr.forEach((num)=>{
-        if(num == 1){
-            answer = answer + dec
-        };
-        dec = dec * 2;
-    })
-    
-    return answer
-}
-
-convertToDecimal(binary)
