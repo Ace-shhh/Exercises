@@ -1,21 +1,11 @@
-/**
- * @param {number[]} candyType
- * @return {number}
- */
-var distributeCandies = function(candyType) {
-    let obj= {};
-    let limit = candyType.length / 2;
-    let numOfTypes = 0;
-    candyType.forEach((type)=>{
-        if(obj[type] !== true){
-            obj[type] = true;
-            numOfTypes = numOfTypes + 1;
-        };
-    })
+const num1 = [4, 1 ,2];
+const num2 = [1 ,3 ,4 ,2];
 
-    if(limit < numOfTypes){
-        return limit;
-    }else{
-        return numOfTypes;
-    }
-};
+function nextGreaterElementh(num1, num2){
+    num1.forEach((num)=>{
+        const idx = num2.indexOf(num)
+        console.log(idx)
+    })
+}
+
+nextGreaterElementh(num1, num2)

@@ -1,19 +1,22 @@
-const arr = [6,6,6,6]
-let obj = {};
-let limit = arr.length / 2;
+const nums1 = [4,1,2]
+const nums2 = [1,3,4,2]
 
-const candyTypes = arr.filter((type)=>{
-    if(obj[type] !== true){
-        obj[type] = true;
-        return true;
-    }else{
-        return false;
-    }
-})
-console.log(Object.values(obj).length)
-// if(limit < candyTypes.length){
-//     console.log(limit);
-// }else{
-//     console.log(candyTypes.length);
-// }
+function nextGreaterElement(){
+    let ans = []
+    nums1.forEach((num)=>{
+        let greaterElement = -1;
+        const subset = nums2.indexOf(num);
+        for(i = subset + 1; i < nums2.length; i++){
+            if(nums2[i] > num){
+                greaterElement = nums2[i];
+                break;
+            }else{
+                greaterElement = -1
+            }
+        }
+        ans.push(greaterElement);
+    })
+    return ans
+}
 
+nextGreaterElement(nums1, nums2)
