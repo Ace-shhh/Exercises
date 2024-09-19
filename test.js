@@ -1,7 +1,5 @@
-const object1 = {
-    a: 1,
-    b: 2,
-    c: 3,
-  };
+let num = 1;
 
-  console.log(Math.min(...Object.values(object1)))
+num = 0
+
+console.log(num)
