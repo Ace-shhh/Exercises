@@ -12,7 +12,7 @@ function removeDuplicates(){
             filtered.push(i)
         }
     })
-    return filtered;
+    console.log(filtered);
 };
 
-removeDuplicates();
+removeDuplicates(nums);

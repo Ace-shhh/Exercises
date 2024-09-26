@@ -10,4 +10,5 @@ var removeDuplicates = function(nums) {
             }
         })
     })
+    console.log(nums)
 };

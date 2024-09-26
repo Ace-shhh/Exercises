@@ -1,19 +1,18 @@
-const s = "aabb"
-
-
+const s = "loveleetcode"
 function firstUniqChar(s) {
-    let i = 0;
-    let k = 0;
-    while(i < s.length){
-        if(s[k] === s[i] && k !== i){
-            k++;
-            i = 0;
+    let seen = {};
+    for(let i = 0; i < s.length; i++){
+        if(!seen[s[i]]){
+            seen[s[i]] = 1;
         }else{
-            i++;
+            seen[s[i]] +=1;
         }
-        
     }
-    console.log((k !== s.length ? k : -1)) ;
-};
-
+    for(i = 0 ; i < s.length ; i++){
+        if(seen[s[i]] === 1){
+            return i;
+        }
+    }
+    return -1;
+}
 firstUniqChar(s)
